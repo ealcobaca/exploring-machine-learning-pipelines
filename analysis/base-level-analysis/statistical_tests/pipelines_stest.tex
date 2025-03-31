@@ -1,0 +1,24 @@
+\begin{figure}
+\centering
+\begin{tikzpicture}[xscale=2]
+\node (Label) at (1.279678177333119, 0.7){\tiny{CD = 0.13}}; % the label
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black] (1.2,0.5) -- (1.359356354666238,0.5);
+\foreach \x in {1.2, 1.359356354666238} \draw[thick,color = black] (\x, 0.4) -- (\x, 0.6);
+ 
+\draw[gray, thick](1.2,0) -- (6.0,0);
+\foreach \x in {1.2,2.4,3.6,4.8,6.0} \draw (\x cm,1.5pt) -- (\x cm, -1.5pt);
+\node (Label) at (1.2,0.2){\tiny{1}};
+\node (Label) at (2.4,0.2){\tiny{2}};
+\node (Label) at (3.6,0.2){\tiny{3}};
+\node (Label) at (4.8,0.2){\tiny{4}};
+\node (Label) at (6.0,0.2){\tiny{5}};
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](3.133696682464455,-0.25) -- (3.382701421800948,-0.25);
+\node (Point) at (3.183696682464455, 0){};\node (Label) at (0.5,-0.45){\scriptsize{extra_trees + no_preprocessing}}; \draw (Point) |- (Label);
+\node (Point) at (3.2832227488151657, 0){};\node (Label) at (0.5,-0.75){\scriptsize{gradient_boosting + feature_agglomeration}}; \draw (Point) |- (Label);
+\node (Point) at (4.250616113744075, 0){};\node (Label) at (6.5,-0.45){\scriptsize{adaboost + polynomial}}; \draw (Point) |- (Label);
+\node (Point) at (3.9497630331753557, 0){};\node (Label) at (6.5,-0.75){\scriptsize{gradient_boosting + polynomial}}; \draw (Point) |- (Label);
+\node (Point) at (3.332701421800948, 0){};\node (Label) at (6.5,-1.05){\scriptsize{adaboost + feature_agglomeration}}; \draw (Point) |- (Label);
+\end{tikzpicture}
+\caption{Nemenyi - pipelines stest.csv}
+\label{fig:nemenyi}
+\end{figure}

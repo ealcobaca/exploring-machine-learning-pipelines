@@ -1,0 +1,20 @@
+pipelines,f1_weighted_test_std_count,f1_weighted_test_std_mean,f1_weighted_test_std_std,f1_weighted_test_std_min,f1_weighted_test_std_25%,f1_weighted_test_std_50%,f1_weighted_test_std_75%,f1_weighted_test_std_max,rank,tie,wins
+bernoulli_nb + kernel_pca,0.0,,,,,,,,,0.0,0.0
+bernoulli_nb + liblinear_svc_preprocessor,25.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,129.18,0.0,0.0
+bernoulli_nb + nystroem_sampler,207.0,0.025410601485612905,0.054621028875795744,0.0,0.0,0.0,0.022809146280980415,0.3048879442028177,95.15458937198068,0.0,0.0
+decision_tree + feature_agglomeration,209.0,0.03533576845822418,0.07764134397931002,0.0,0.0,0.0,0.028245612340437883,0.4702232028619412,90.58851674641149,0.0,2.0
+decision_tree + liblinear_svc_preprocessor,129.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,118.96899224806202,0.0,0.0
+decision_tree + select_rates_classification,125.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,119.952,0.0,0.0
+gaussian_nb + select_rates_classification,199.0,0.011908765355248955,0.03210543883805311,0.0,0.0,0.0,0.0034212311294943166,0.27905165968020124,102.96231155778895,0.0,0.0
+lda + kernel_pca,0.0,,,,,,,,,0.0,0.0
+liblinear_svc + fast_ica,185.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,122.95945945945945,0.0,0.0
+passive_aggressive + feature_agglomeration,202.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,122.10396039603961,0.0,0.0
+passive_aggressive + kernel_pca,0.0,,,,,,,,,0.0,0.0
+passive_aggressive + kitchen_sinks,174.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,122.09482758620689,0.0,0.0
+passive_aggressive + no_preprocessing,162.0,0.017397879526290103,0.03469380424022261,0.0,0.0,0.0,0.021668579231539524,0.19276129446924015,96.91666666666667,0.0,0.0
+passive_aggressive + random_trees_embedding,74.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,125.8445945945946,0.0,0.0
+passive_aggressive + select_rates_classification,203.0,0.005351561396727093,0.031042401752908618,0.0,0.0,0.0,0.0,0.30581082950690097,115.94334975369458,1.0,0.0
+qda + extra_trees_preproc_for_classification,199.0,0.017913409088722482,0.04143112013845661,0.0,0.0,0.0,0.01374472026973116,0.2383477096053694,100.24874371859296,0.0,0.0
+qda + kernel_pca,0.0,,,,,,,,,0.0,0.0
+qda + kitchen_sinks,206.0,0.024804512073010935,0.06717843633584435,0.0,0.0,0.0,0.00014920215756955088,0.3976496787108955,103.54611650485437,0.0,0.0
+sgd + feature_agglomeration,0.0,,,,,,,,,0.0,0.0

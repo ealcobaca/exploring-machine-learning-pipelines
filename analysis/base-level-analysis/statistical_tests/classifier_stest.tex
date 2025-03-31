@@ -1,0 +1,54 @@
+\begin{figure}
+\centering
+\begin{tikzpicture}[xscale=2]
+\node (Label) at (0.46915778422086984, 0.7){\tiny{CD = 0.50}}; % the label
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black] (0.375,0.5) -- (0.5633155684417397,0.5);
+\foreach \x in {0.375, 0.5633155684417397} \draw[thick,color = black] (\x, 0.4) -- (\x, 0.6);
+ 
+\draw[gray, thick](0.375,0) -- (6.0,0);
+\foreach \x in {0.375,0.75,1.125,1.5,1.875,2.25,2.625,3.0,3.375,3.75,4.125,4.5,4.875,5.25,5.625,6.0} \draw (\x cm,1.5pt) -- (\x cm, -1.5pt);
+\node (Label) at (0.375,0.2){\tiny{1}};
+\node (Label) at (0.75,0.2){\tiny{2}};
+\node (Label) at (1.125,0.2){\tiny{3}};
+\node (Label) at (1.5,0.2){\tiny{4}};
+\node (Label) at (1.875,0.2){\tiny{5}};
+\node (Label) at (2.25,0.2){\tiny{6}};
+\node (Label) at (2.625,0.2){\tiny{7}};
+\node (Label) at (3.0,0.2){\tiny{8}};
+\node (Label) at (3.375,0.2){\tiny{9}};
+\node (Label) at (3.75,0.2){\tiny{10}};
+\node (Label) at (4.125,0.2){\tiny{11}};
+\node (Label) at (4.5,0.2){\tiny{12}};
+\node (Label) at (4.875,0.2){\tiny{13}};
+\node (Label) at (5.25,0.2){\tiny{14}};
+\node (Label) at (5.625,0.2){\tiny{15}};
+\node (Label) at (6.0,0.2){\tiny{16}};
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](1.8605450236966823,-0.25) -- (2.0515402843601898,-0.25);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](1.95154028436019,-0.4) -- (2.170793838862559,-0.4);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](2.6324052132701423,-0.55) -- (2.8831161137440757,-0.55);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](2.783116113744076,-0.7) -- (3.0706161137440757,-0.7);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](2.970616113744076,-0.85) -- (3.1372630331753557,-0.85);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](3.037263033175356,-1.0) -- (3.263447867298578,-1.0);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](3.662677725118484,-1.15) -- (3.850473933649289,-1.15);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](3.7504739336492894,-1.3) -- (4.0379739336492895,-1.3);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](4.313862559241707,-1.45) -- (4.5178317535545025,-1.45);
+\node (Point) at (1.643601895734597, 0){};\node (Label) at (0.5,-2.05){\scriptsize{gradient_boosting}}; \draw (Point) |- (Label);
+\node (Point) at (1.9105450236966823, 0){};\node (Label) at (0.5,-2.3499999999999996){\scriptsize{adaboost}}; \draw (Point) |- (Label);
+\node (Point) at (2.00154028436019, 0){};\node (Label) at (0.5,-2.65){\scriptsize{extra_trees}}; \draw (Point) |- (Label);
+\node (Point) at (2.1207938388625593, 0){};\node (Label) at (0.5,-2.9499999999999997){\scriptsize{random_forest}}; \draw (Point) |- (Label);
+\node (Point) at (2.682405213270142, 0){};\node (Label) at (0.5,-3.25){\scriptsize{mlp}}; \draw (Point) |- (Label);
+\node (Point) at (2.7609597156398102, 0){};\node (Label) at (0.5,-3.55){\scriptsize{k_nearest_neighbors}}; \draw (Point) |- (Label);
+\node (Point) at (2.833116113744076, 0){};\node (Label) at (0.5,-3.8499999999999996){\scriptsize{lda}}; \draw (Point) |- (Label);
+\node (Point) at (3.020616113744076, 0){};\node (Label) at (0.5,-4.15){\scriptsize{passive_aggressive}}; \draw (Point) |- (Label);
+\node (Point) at (5.392890995260664, 0){};\node (Label) at (6.5,-2.05){\scriptsize{multinomial_nb}}; \draw (Point) |- (Label);
+\node (Point) at (4.467831753554503, 0){};\node (Label) at (6.5,-2.3499999999999996){\scriptsize{bernoulli_nb}}; \draw (Point) |- (Label);
+\node (Point) at (4.363862559241706, 0){};\node (Label) at (6.5,-2.65){\scriptsize{gaussian_nb}}; \draw (Point) |- (Label);
+\node (Point) at (3.987973933649289, 0){};\node (Label) at (6.5,-2.9499999999999997){\scriptsize{sgd}}; \draw (Point) |- (Label);
+\node (Point) at (3.800473933649289, 0){};\node (Label) at (6.5,-3.25){\scriptsize{qda}}; \draw (Point) |- (Label);
+\node (Point) at (3.7126777251184837, 0){};\node (Label) at (6.5,-3.55){\scriptsize{decision_tree}}; \draw (Point) |- (Label);
+\node (Point) at (3.2134478672985782, 0){};\node (Label) at (6.5,-3.8499999999999996){\scriptsize{liblinear_svc}}; \draw (Point) |- (Label);
+\node (Point) at (3.087263033175356, 0){};\node (Label) at (6.5,-4.15){\scriptsize{libsvm_svc}}; \draw (Point) |- (Label);
+\end{tikzpicture}
+\caption{Nemenyi - classifier stest.csv}
+\label{fig:nemenyi}
+\end{figure}

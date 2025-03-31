@@ -1,0 +1,42 @@
+\begin{figure}
+\centering
+\begin{tikzpicture}[xscale=2]
+\node (Label) at (0.553206550900923, 0.7){\tiny{CD = 0.40}}; % the label
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black] (0.46153846153846156,0.5) -- (0.6448746402633843,0.5);
+\foreach \x in {0.46153846153846156, 0.6448746402633843} \draw[thick,color = black] (\x, 0.4) -- (\x, 0.6);
+ 
+\draw[gray, thick](0.46153846153846156,0) -- (6.0,0);
+\foreach \x in {0.46153846153846156,0.9230769230769231,1.3846153846153846,1.8461538461538463,2.3076923076923075,2.769230769230769,3.230769230769231,3.6923076923076925,4.153846153846154,4.615384615384615,5.076923076923077,5.538461538461538,6.0} \draw (\x cm,1.5pt) -- (\x cm, -1.5pt);
+\node (Label) at (0.46153846153846156,0.2){\tiny{1}};
+\node (Label) at (0.9230769230769231,0.2){\tiny{2}};
+\node (Label) at (1.3846153846153846,0.2){\tiny{3}};
+\node (Label) at (1.8461538461538463,0.2){\tiny{4}};
+\node (Label) at (2.3076923076923075,0.2){\tiny{5}};
+\node (Label) at (2.769230769230769,0.2){\tiny{6}};
+\node (Label) at (3.230769230769231,0.2){\tiny{7}};
+\node (Label) at (3.6923076923076925,0.2){\tiny{8}};
+\node (Label) at (4.153846153846154,0.2){\tiny{9}};
+\node (Label) at (4.615384615384615,0.2){\tiny{10}};
+\node (Label) at (5.076923076923077,0.2){\tiny{11}};
+\node (Label) at (5.538461538461538,0.2){\tiny{12}};
+\node (Label) at (6.0,0.2){\tiny{13}};
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](2.210444768501641,-0.25) -- (2.471217644914327,-0.25);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](2.698888078745899,-0.4) -- (2.7997630331753554,-0.4);
+\draw[decorate,decoration={snake,amplitude=.4mm,segment length=1.5mm,post length=0mm},very thick, color = black](3.5272511848341233,-0.55) -- (3.772274881516587,-0.55);
+\node (Point) at (1.8514035727305869, 0){};\node (Label) at (0.5,-0.8500000000000001){\scriptsize{no_preprocessing}}; \draw (Point) |- (Label);
+\node (Point) at (2.2604447685016407, 0){};\node (Label) at (0.5,-1.1500000000000001){\scriptsize{feature_agglomeration}}; \draw (Point) |- (Label);
+\node (Point) at (2.28647466277798, 0){};\node (Label) at (0.5,-1.4500000000000002){\scriptsize{polynomial}}; \draw (Point) |- (Label);
+\node (Point) at (2.4212176449143272, 0){};\node (Label) at (0.5,-1.75){\scriptsize{select_percentile_classification}}; \draw (Point) |- (Label);
+\node (Point) at (2.7488880787458987, 0){};\node (Label) at (0.5,-2.05){\scriptsize{extra_trees_preproc_for_classification}}; \draw (Point) |- (Label);
+\node (Point) at (2.7497630331753555, 0){};\node (Label) at (0.5,-2.35){\scriptsize{select_rates_classification}}; \draw (Point) |- (Label);
+\node (Point) at (5.961502005103901, 0){};\node (Label) at (6.5,-0.8500000000000001){\scriptsize{kernel_pca}}; \draw (Point) |- (Label);
+\node (Point) at (4.408457892818083, 0){};\node (Label) at (6.5,-1.1500000000000001){\scriptsize{kitchen_sinks}}; \draw (Point) |- (Label);
+\node (Point) at (3.7222748815165874, 0){};\node (Label) at (6.5,-1.4500000000000002){\scriptsize{nystroem_sampler}}; \draw (Point) |- (Label);
+\node (Point) at (3.6625592417061608, 0){};\node (Label) at (6.5,-1.75){\scriptsize{random_trees_embedding}}; \draw (Point) |- (Label);
+\node (Point) at (3.577251184834123, 0){};\node (Label) at (6.5,-2.05){\scriptsize{pca}}; \draw (Point) |- (Label);
+\node (Point) at (3.3572001458257383, 0){};\node (Label) at (6.5,-2.35){\scriptsize{liblinear_svc_preprocessor}}; \draw (Point) |- (Label);
+\node (Point) at (2.9925628873496177, 0){};\node (Label) at (6.5,-2.65){\scriptsize{fast_ica}}; \draw (Point) |- (Label);
+\end{tikzpicture}
+\caption{Nemenyi - preprocessor stest.csv}
+\label{fig:nemenyi}
+\end{figure}

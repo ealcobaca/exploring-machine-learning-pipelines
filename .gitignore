@@ -1,3 +1,8 @@
+# long datasets
+analysis/raw-data/* 
+analysis/pipeline_experiment_result.csv
+analysis/datasets_meta_data.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
