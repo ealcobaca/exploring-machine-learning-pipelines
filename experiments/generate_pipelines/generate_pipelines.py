@@ -7,8 +7,16 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 from autosklearn.classification import AutoSklearnClassifier
-from autosklearn.metrics import accuracy, balanced_accuracy, f1_macro, f1_weighted, precision_macro, precision_weighted, \
-    recall_macro, recall_weighted
+from autosklearn.metrics import (
+    accuracy,
+    balanced_accuracy,
+    f1_macro,
+    f1_weighted,
+    precision_macro,
+    precision_weighted,
+    recall_macro,
+    recall_weighted,
+)
 from sklearn.model_selection import StratifiedKFold
 
 from util import read_dataset, create_result_directory
@@ -36,7 +44,7 @@ def metric_list():
         precision_macro,
         precision_weighted,
         recall_macro,
-        recall_weighted
+        recall_weighted,
     ]
     return metrics
 
@@ -74,7 +82,14 @@ def ger_directory_name(directory, dataset_name, seed):
 
 
 def ger_tmp_fold_name(dataset_name, time_left_for_this_task, seed):
-    return "auto-sklearn-" + dataset_name + "_" + str(time_left_for_this_task) + "_" + str(seed)
+    return (
+        "auto-sklearn-"
+        + dataset_name
+        + "_"
+        + str(time_left_for_this_task)
+        + "_"
+        + str(seed)
+    )
 
 
 def create_result_directory(directory_name):
@@ -93,15 +108,15 @@ def if_result_directory_exit(directory_name):
 
 
 def generate_pipelines(
-        dataset_path,
-        result_directory,
-        time_left_for_this_task=120,
-        per_run_time_limit=30,
-        memory_limit=10240,
-        resampling_strategy="holdout",
-        seed=1,
-        number_of_configs=2,
-        n_splits=10
+    dataset_path,
+    result_directory,
+    time_left_for_this_task=120,
+    per_run_time_limit=30,
+    memory_limit=10240,
+    resampling_strategy="holdout",
+    seed=1,
+    number_of_configs=2,
+    n_splits=10,
 ):
     dataset_name = ger_dataset_name(dataset_path)
     directory_name = ger_directory_name(result_directory, dataset_name, seed)
@@ -113,7 +128,9 @@ def generate_pipelines(
     X, y, categorical_indicator, attribute_names = read_dataset(dataset_path)
     y = y.cat.codes
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=True, stratify=y, random_state=seed)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, shuffle=True, stratify=y, random_state=seed
+    )
 
     estimator = AutoSklearnClassifier(
         time_left_for_this_task=time_left_for_this_task,
@@ -125,7 +142,7 @@ def generate_pipelines(
         tmp_folder=tmp_folder_name,
         delete_tmp_folder_after_terminate=False,
         seed=seed,
-        ensemble_class=None
+        ensemble_class=None,
     )
 
     # generate configs
@@ -154,8 +171,14 @@ def generate_pipelines(
             i = 0
             for train_index, test_index in skf.split(X_train, y_train):
                 i += 1
-                X_train_i, y_train_i = X_train.iloc[train_index, :], y_train.iloc[train_index]
-                X_test_i, y_test_i = X_train.iloc[test_index, :], y_train.iloc[test_index]
+                X_train_i, y_train_i = (
+                    X_train.iloc[train_index, :],
+                    y_train.iloc[train_index],
+                )
+                X_test_i, y_test_i = (
+                    X_train.iloc[test_index, :],
+                    y_train.iloc[test_index],
+                )
 
                 pipeline, run_info, run_value = estimator.fit_pipeline(
                     X=X_train_i,
@@ -170,18 +193,22 @@ def generate_pipelines(
                     "seed_i": seed,
                     "config_id": config_id,
                     "fold": i,
-                    "config_hash": config_hash
+                    "config_hash": config_hash,
                 }
-                result_dict.update({
-                    "duration": run_value.time,
-                    'start_time': run_value.starttime,
-                    'end_time': run_value.endtime,
-                    'status': str(run_value.status)
-                })
-                result_dict.update({
-                    "seed": run_info.seed,
-                    "budget": run_info.budget,
-                })
+                result_dict.update(
+                    {
+                        "duration": run_value.time,
+                        "start_time": run_value.starttime,
+                        "end_time": run_value.endtime,
+                        "status": str(run_value.status),
+                    }
+                )
+                result_dict.update(
+                    {
+                        "seed": run_info.seed,
+                        "budget": run_info.budget,
+                    }
+                )
                 result_dict.update(run_info.config.get_dictionary())
 
                 if pipeline != None:
@@ -189,13 +216,18 @@ def generate_pipelines(
                     ys = [y_train_i, y_test_i, y_test]
                     tags = ["train", "val", "test"]
                     yps = [pipeline.predict(Xi) for Xi in Xs]
-                    perfs = [apply_metrics(yt, yp, t) for yt, yp, t in zip(ys, yps, tags)]
+                    perfs = [
+                        apply_metrics(yt, yp, t) for yt, yp, t in zip(ys, yps, tags)
+                    ]
                     result_dict.update(update_dicts(perfs))
 
                 result_frame = pd.Series(result_dict).to_frame().T.reset_index()
 
-                result_df = pd.concat([result_df, result_frame]) if isinstance(result_df,
-                                                                               pd.DataFrame) else result_frame
+                result_df = (
+                    pd.concat([result_df, result_frame])
+                    if isinstance(result_df, pd.DataFrame)
+                    else result_frame
+                )
 
             if (config_id % 10) == 0:
                 result_df.to_csv(df_path, index=False)
@@ -207,4 +239,5 @@ def generate_pipelines(
         result_df.to_csv(df_path, index=False)
 
     import shutil
+
     shutil.rmtree(tmp_folder_name, ignore_errors=True)

@@ -4,7 +4,7 @@ from generate_pipelines import generate_pipelines, metric_list
 
 import os
 
-os.environ['JOBLIB_TEMP_FOLDER'] = '/tmp'
+os.environ["JOBLIB_TEMP_FOLDER"] = "/tmp"
 
 # command
 # python run.py result_fold seed
@@ -34,5 +34,5 @@ if __name__ == "__main__":
         memory_limit=10240,
         resampling_strategy="holdout",
         seed=seed,
-        number_of_configs=confs
+        number_of_configs=confs,
     )

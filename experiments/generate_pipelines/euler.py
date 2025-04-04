@@ -1,4 +1,3 @@
-
 import os
 import sys
 
@@ -29,7 +28,9 @@ SEEDS = range(1)
 
 def run_euler():
     cmd = "python3.10 run.py ../../results/pipeline_generation/{0}iter {1} {0} {2}\n"
-    cmd_paths = get_dataset_paths("../../datasets/training/") + get_dataset_paths("../../datasets/testing/")
+    cmd_paths = get_dataset_paths("../../datasets/training/") + get_dataset_paths(
+        "../../datasets/testing/"
+    )
 
     os.makedirs(TMP, exist_ok=True)
 
@@ -55,8 +56,8 @@ def run_euler():
     print("Requirements list:")
     print(EULER_SCIRPT)
     print()
-    euler(command_line=job_path, requirements=req_path, sleep_time=1800,
-          job_name="ftm")
+    euler(command_line=job_path, requirements=req_path, sleep_time=1800, job_name="ftm")
+
 
 def main():
     run_euler()
@@ -64,5 +65,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
