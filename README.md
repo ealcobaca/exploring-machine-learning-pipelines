@@ -26,5 +26,10 @@ This repository is organized as follow:
 ## Run
 
 * For run analysis go to [/analysis/README.md](/analysis/README.md).
-* For run experiments go to [/experiments/README.md](/experiments/README.md).
+    * You can use Makefile for run/test:
+        - clean
+        - create-env-experiment 
+        - run-example
+        - run-experiment 
 
+* For run experiments go to [/experiments/README.md](/experiments/README.md).
